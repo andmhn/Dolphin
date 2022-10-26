@@ -30,11 +30,11 @@ class Program
 		
 		Console.WriteLine(helpText);
 	}
-	
+
 	static void ParseArg(string[] args)
 	{
 		string[] options = {"--letters", "--chars", "--words", "--lines"};
-	
+
 		string Arg1 = args[0];
 		// TODO fix this
 		string Arg2 = "";
@@ -48,7 +48,7 @@ class Program
 			PrintHelp();
 			return;
 		}
-		
+
 		// Part 1 Where We only have File.
 		if(File.Exists(Arg1))
 		{

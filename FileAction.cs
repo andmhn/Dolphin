@@ -4,13 +4,13 @@ class FileAction
 {
 	private string _fileUri;
 	private string _content = "";
-	
+
 	public FileAction(string fileUri)
 	{
 		_fileUri = fileUri;
 		_content = File.ReadAllText(_fileUri);
 	}
-	
+
 	public void AllAction()
 	{
 		CountAlphaN();
@@ -18,7 +18,7 @@ class FileAction
 		CountWords();
 		CountLines();	
 	}
-	
+
 	public void CountAlphaN()
 	{
 		int counter = 0;
@@ -27,18 +27,18 @@ class FileAction
 				(c >= 'a' && c <= 'z') ||
 				(c >= '0' && c <= '9'))
 			{
-    			counter++;
-            }
+				counter++;
+			}
 		}
 		Console.WriteLine($"Total Letters in file {_fileUri} : {counter}");
 	}
-	
+
 	public void CountChars()
 	{
 		int number = _content.Length;
 		Console.WriteLine($"Total Characters in file {_fileUri} : {number}");
 	}
-	
+
 	public void CountWords()
 	{
 		string[] split_text = _content.Split(' ');
@@ -63,8 +63,8 @@ class FileAction
 		{
 			if (c == '\n')
 			{
-                counter++;
-            }
+				counter++;
+			}
 		}
 		Console.WriteLine($"Total Lines in file {_fileUri} : {counter}");
 	}
