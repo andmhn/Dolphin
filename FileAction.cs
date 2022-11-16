@@ -2,13 +2,13 @@ namespace Dolphin;
 
 class FileAction
 {
-	private string _fileUri;
+	public string FileUri { get; set; }
 	private string _content = "";
 
 	public FileAction(string fileUri)
 	{
-		_fileUri = fileUri;
-		_content = File.ReadAllText(_fileUri);
+		FileUri = fileUri;
+		_content = File.ReadAllText(FileUri);
 	}
 
 	public void AllAction()
@@ -30,13 +30,13 @@ class FileAction
 				counter++;
 			}
 		}
-		Console.WriteLine($"Total Letters in file {_fileUri} : {counter}");
+		Console.WriteLine($"Total Letters in file {FileUri} : {counter}");
 	}
 
 	public void CountChars()
 	{
 		int number = _content.Length;
-		Console.WriteLine($"Total Characters in file {_fileUri} : {number}");
+		Console.WriteLine($"Total Characters in file {FileUri} : {number}");
 	}
 
 	public void CountWords()
@@ -53,7 +53,7 @@ class FileAction
 		}
 		new_text = new_text.TrimEnd(',');
 		split_text = new_text.Split(',');
-		Console.WriteLine($"Total Words in file {_fileUri} : {split_text.Length}");
+		Console.WriteLine($"Total Words in file {FileUri} : {split_text.Length}");
 	}
 	
 	public void CountLines()
@@ -66,6 +66,6 @@ class FileAction
 				counter++;
 			}
 		}
-		Console.WriteLine($"Total Lines in file {_fileUri} : {counter}");
+		Console.WriteLine($"Total Lines in file {FileUri} : {counter}");
 	}
 }
